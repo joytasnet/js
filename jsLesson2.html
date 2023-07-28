@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jsレッスン</title>
+</head>
+<body>
+<input type="text" id="itAge" value="" placeholder="Enter your age">
+<button onclick="btCheck()">Check!</button>  
+<div id="result"></div>
+<script>
+function func1(){
+  console.log("func1");
+}
+func1();
+let hoge = func1;
+hoge();
+let fuga = function(){
+  console.log("fuga");
+};
+fuga();
+let bar = (x,y)=>{
+  console.log(x+y);
+};
+bar(3,5);
+const btCheck = ()=>{
+  let age=document.getElementById("itAge").value;
+  age=parseInt(age);
+  /*
+  let str;
+  if(age >= 20){
+    str="おとな";
+  }else{
+    str="こども";
+  }
+  */
+ let str = age >= 20 ? "おとな":"こども";
+
+  document.getElementById("result").textContent=str;
+
+};
+</script>
+</body>
+</html>

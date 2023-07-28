@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>平均の計算</h1>
+  <h2 id ="data"></h2>
+  <button onclick="btCalc()">Calc!</button>
+  <div id="result"></div>
+<script>
+const nums=[10,32,18,20,40];
+console.log(nums[0]);//10
+nums[1]=42;
+nums.push(51);
+console.log(nums.length);
+let s = nums.join(",");
+console.log(s);//[10,....]
+//int[] nums={10,32,18,20,40};
+
+let str="";
+let sum=0;
+for(let n of nums){
+  sum += n;
+}
+document.getElementById("data").textContent=nums.join(",");
+const btCalc=()=>{
+  let msg = `要素の平均は${(sum/nums.length).toFixed(1)}です`;
+  document.getElementById("result").textContent=msg;
+};
+</script>
+</body>
+</html>

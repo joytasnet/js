@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>平均の計算</h1>
+  <input type="number" id="num" placeholder="数値を入力">
+  <button onclick="add()">Add</button>
+  <button onclick="btCalc()">Calc!</button>
+  <div id="showArray"></div>
+  <div id="result"></div>
+<script>
+const nums=[];//空の配列を定義
+//DOMの取得
+const eleNum=document.getElementById("num");
+const eleShowArray=document.getElementById("showArray");
+const result=document.getElementById("result");
+//関数
+const add = ()=>{
+  let num =parseInt(eleNum.value);
+  nums.push(num);
+
+  eleNum.value="";//入力欄を空っぽにする処理
+  eleShowArray.textContent=nums.join(",");
+};
+const btCalc=()=>{
+  let sum = 0;
+  for(let n  of nums){
+    sum += n;
+  }
+  let msg = `要素の平均は${(sum/nums.length).toFixed(1)}です。`;
+  result.textContent=msg;
+};
+</script>
+</body>
+</html>
