@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<button id="bt">click</button>
+<div id="result"></div>
+<script>
+window.onload=()=>{
+  let ele=document.getElementById("bt");
+  let result=document.getElementById("result");
+  ele.addEventListener("click",()=>{
+    result.textContent="Clicked!";
+  });
+  ele.addEventListener("click",()=>{
+    window.alert("Clicked!!");
+  });
+};
+</script>
+</body>
+</html>

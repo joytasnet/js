@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+window.onload=()=>{
+  document.getElementById("msg").textContent="こんにちは、イベント!";
+  func1();
+};
+</script>
+ <h1 id="msg">Hello</h1> 
+<script>
+/*
+window.onload=()=>{
+  document.getElementById("msg").textContent="こんにちは、イベント!";
+};
+*/
+let func1=()=>{
+  console.log("func1");
+};
+</script>
+</body>
+</html>

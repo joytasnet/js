@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<button id="a">A</button> 
+<button id="b">B</button> 
+<div id="result"></div>
+<script>
+window.onload=()=>{
+  document.getElementById("a").onclick=myHandler;
+  document.getElementById("b").onclick=myHandler;
+};
+const myHandler=(e)=>{
+  console.dir(e);
+  document.getElementById("result").textContent=e.target.textContent+"が選ばれた";
+};
+</script>
+</body>
+</html>

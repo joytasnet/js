@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="select">赤を持つ</button>
+  <button class="select">緑を持つ</button>
+  <button class="select">青を持つ</button>
+  <button id="writeBt">書く</button>
+  <p id="info"></p>
+  <div id="graph"></div>
+<script>
+class ColorPen{
+  constructor(color,code,length){
+    this.color=color;
+    this.code=code;
+    this.length=length;
+  }
+  write(){
+    let msg="";
+    if(this.length <= 0){
+      msg="もうかけません";
+      return msg;
+    }
+    this.length-=0.5;
+    msg=`${this.color}で書いた。残りの長さ${this.length}`;
+    return msg;
+  }
+}
+//const bts = document.querySelectorAll(".select");
+const bts = document.getElementsByClassName("select");
+let pens = [
+  new ColorPen("赤","red",10),
+  new ColorPen("緑","green",10),
+  new ColorPen("青","blue",10),
+];
+let pen = null;
+//const info=document.querySelector("#info");
+const info=document.getElementById("info");
+const graph=document.getElementById("graph");
+for(let i=0;i<bts.length;i++){
+  bts[i].addEventListener("click",()=>{
+    pen=pens[i];
+    info.textContent=`${pen.color}を持った。`;
+    setStyle();
+  });
+}
+const writeBt = document.getElementById("writeBt");
+writeBt.addEventListener("click",()=>{
+  let msg="";
+  if(pen==null){
+    msg="ペンを持ってください!";
+  }else{
+    msg=pen.write();
+    setStyle();
+  }
+  info.textContent=msg;
+});
+const setStyle=()=>{
+  graph.textContent=pen.length+"cm";
+  graph.style.width=pen.length+"cm";
+  graph.style.backgroundColor=pen.code;
+  graph.style.color="yellow";
+};
+</script>
+</body>
+</html>

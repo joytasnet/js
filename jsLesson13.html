@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<table id="table" border="1"></table> 
+<script>
+window.onload=()=>{
+  const table=document.getElementById("table");
+  for(let i=1;i<=9;i++){
+    const tr = document.createElement("tr");
+    for(let j=1;j<=9;j++){
+      const td = document.createElement("td");
+      td.textContent=`${i}*${j}=${i*j}`;
+      tr.append(td);
+    }
+    table.append(tr);
+  }
+
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  position: relative;
+  aspect-ratio: 100 / 45;
+  background-image: repeating-linear-gradient(
+          /*45deg,*/
+          /*角度を指定する場合*/
+          transparent 0 4px,
+          /*color start stop*/
+          rgba(255, 255, 255, .3) 4px 6px),
+      url(../images/header-bg.jpg);
+  background-size: auto, cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+header::after {
+
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow:
+      inset 0 0 10vw 2vw rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+  font-size: 16vw;
+  color: #def;
+  font-family: 'Tangerine', cursive;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4%;
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit , minmax(300px,1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+
+.grid img {
+  max-width: 100%;
+}
+
+footer {
+  height: 10vh;
+  background-color: rgb(61, 28, 4);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer small {
+  font-size: 0.8rem;
+}

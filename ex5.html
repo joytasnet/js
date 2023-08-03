@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<table id="table" border="1"></table>
+<script>
+  window.onload=()=>{
+    const table=document.getElementById("table");
+    for(let i=1;i<=9;i++){
+      const tr=document.createElement("tr");
+      for(let j=1;j<=9;j++){
+        const td=document.createElement("td");
+        td.textContent=`${i}x${j}=`;
+        td.ans=i*j;
+        td.addEventListener("mouseenter",()=>{
+          td.style.textDecoration="underline";
+        });
+        td.addEventListener("mouseleave",()=>{
+          td.style.textDecoration="none";
+        });
+        td.addEventListener("click",()=>{
+          const userAns=window.prompt(td.textContent);
+          if(td.ans==parseInt(userAns)){
+            td.style.backgroundColor="lightgreen";
+            td.textContent += td.ans;
+          }else{
+            td.style.backgroundColor="pink";
+          }
+        });
+        tr.append(td);
+      }
+      table.append(tr);
+    }
+  };
+</script>
+</body>
+</html>
